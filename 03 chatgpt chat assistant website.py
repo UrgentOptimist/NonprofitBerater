@@ -3,7 +3,7 @@ import gradio
 
 openai.api_key = "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"
 
-messages = [{"role": "system", "content": "Du bist ein Finzanzanalyst spezialisiert auf ESG"}]
+messages = [{"role": "system", "content": "Du bist ein Berater für Nonprofit Organisationen"}]
 
 def CustomChatGPT(user_input):
     messages.append({"role": "user", "content": user_input})
@@ -15,6 +15,6 @@ def CustomChatGPT(user_input):
     messages.append({"role": "assistant", "content": ChatGPT_reply})
     return ChatGPT_reply
 
-demo = gradio.Interface(fn=CustomChatGPT, inputs = "text", outputs = "text", title = "ESG Finanzanalyst")
+demo = gradio.Interface(fn=CustomChatGPT, inputs = "text", outputs = "text", title = "Nonprofit Berater")
 
 demo.launch(share=True)
